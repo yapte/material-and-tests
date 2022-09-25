@@ -1,0 +1,43 @@
+<div class="back">
+    <div class="wrap {{timelineState.class}}">
+        <div *ngIf="timelineState.index > 1" class="img" [ngStyle]="{backgroundImage: rect.path}"></div>
+        <button *ngIf="timelineState.index > 1" mat-icon-button class="close" (click)="close()" @titleAnimation>
+            <mat-icon color="primary">close</mat-icon>
+        </button>
+
+        <div *ngIf="timelineState.index > 1" class="info col" @titleAnimation>
+            <h3> Lorem ipsum dolor sit </h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, obcaecati nam. Aperiam deserunt debitis
+                veritatis atque ipsa, unde quasi nihil commodi minus accusamus fugit necessitatibus natus perferendis
+                ullam placeat quia.
+            </p>
+            <p>
+                Aliquid, accusamus! Nulla perferendis, quia consequatur veritatis vitae ratione corrupti quaerat ab
+                similique consectetur ipsum? Quis, iste ipsam, nesciunt asperiores, harum non repudiandae omnis vel eum
+                aliquam at eius sed.
+            </p>
+
+            <div class="btns ">
+                <button mat-flat-button type="button"> Flat button </button>
+                <button mat-icon-button>
+                    <mat-icon color="primary">favorite</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon color="warn">bolt</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon color="accent">done</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="timelineState.index < 2" class="fixed-img" [ngStyle]="{
+        top: rect.y, 
+        left: rect.x, 
+        width: rect.width, 
+        height: rect.height, 
+        backgroundImage: rect.path
+    }"></div>
+</div>

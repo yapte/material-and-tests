@@ -1,0 +1,71 @@
+:host {
+    position: fixed;
+}
+
+.back {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: rgba($color: white, $alpha: .7);
+
+    .wrap {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        border-radius: 12px;
+        margin: 40px;
+        border: solid 0px #dedede;
+        transition: 500ms, box-shadow 300ms, border-width 300ms;
+
+        .img {
+            height: calc(100vw / 2 - 80px / 2);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: 1s;
+        }
+
+        .close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+        }
+
+        .info {
+            padding: 24px;
+
+            h3 {
+                // color: $primary;
+            }
+
+            .btns {
+                display: flex;
+                gap: 24px;
+            }
+        }
+
+        &.state2 {
+            background-color: white;
+            box-shadow:
+                0 0 12px 0 rgba($color: #000000, $alpha: .12),
+                0 0 24px 0 rgba($color: #000000, $alpha: .06);
+
+            .img {
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+            }
+        }
+    }
+}
+
+.fixed-img {
+    transition: 500ms;
+    position: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
