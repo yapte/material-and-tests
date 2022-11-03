@@ -1,0 +1,37 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #efefef;
+    border-radius: 3px;
+
+    .item {
+        align-items: flex-start;
+        border-left: solid 4px transparent;
+        background-color: white;
+        padding: 12px;
+        gap: 6px;
+
+        &:not(.active) {
+            cursor: pointer;
+        }
+
+        &.active {
+            border-color: orange;
+            
+            .name {
+                color: orange;
+            }
+        }
+        
+        .name {
+            text-transform: uppercase;
+            color: #565656;
+            font-weight: 600;
+        }
+
+        .description {
+            font-weight: 200;
+            color: #989898;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+pre {
+    padding: 10px;
+    border: solid 1px #ccc;
+    border-radius: 7px;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.editor-panel {
+    button {
+        mat-icon {
+            color: orange;
+        }
+        
+        &:disabled {
+            mat-icon {
+                color: #bbb;
+            }
+        }
+    }
+}
+
+.editor {
+    padding: 12px;
+    border-radius: 6px;
+    border: solid 1px #666;
+    height: 260px;
+}

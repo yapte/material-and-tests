@@ -1,0 +1,17 @@
+<div class="top">
+    <span> Напишите ваше сообщение: </span>
+    <button mat-stroked-button color="primary" (click)="fileInput.click()">
+        Прикрепить файл
+        <mat-icon>attach_file</mat-icon>
+    </button>
+</div>
+
+<div class="editor-wrap col">
+    <div #editor contenteditable class="editor">
+        editor works!
+    </div>
+    <button mat-raised-button class="btn-send" (click)="send()"> Отправить </button>
+</div>
+
+
+<input type="file" #fileInput>

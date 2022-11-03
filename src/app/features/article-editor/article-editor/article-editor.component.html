@@ -1,0 +1,18 @@
+<div class="editor-panel row">
+    <button mat-icon-button [disabled]="!isLinkActive">
+        <mat-icon>link</mat-icon>
+    </button>
+</div>
+<div #editor [contentEditable]="true" class="editor" (selectstart)="onSelectstart($event)">
+    <a href="#">Lorem</a> ipsum dolor sit amet consectetur adipisicing elit. Tempora vero numquam, amet ex rem accusamus minus dolorum
+    saepe quam, non vitae veniam, ipsum itaque molestiae! Voluptatibus ad adipisci aut laudantium.
+</div>
+
+<div *ngIf="page$ |async as page" class="wrap">
+    Feature generator: app-article-editor component
+    <pre [style.borderColor]="'green'"> {{page |json}} </pre>
+</div>
+
+<div *ngIf="inProgress$ |async" [style.color]="'yellow'"> IN PROGRESS ... </div>
+
+<pre *ngIf="error$ |async as error" [style.borderColor]="'red'"> {{error |json}} </pre>

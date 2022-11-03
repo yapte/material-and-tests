@@ -1,0 +1,18 @@
+<message-author></message-author>
+
+<div class="bubble">
+    <mat-icon *ngIf="message.isCommon" class="cert"> workspace_premium </mat-icon>
+    <div class="top">
+        <message-text></message-text>
+        <message-read-indicator *ngIf="message.isRead; else indicatorMock"></message-read-indicator>
+    </div>
+    <message-table *ngIf="message.id === 'xe'"></message-table>
+    <message-actions *ngIf="message.id === 'xe'"></message-actions>
+    <message-files *ngIf="message.id === 'br'"></message-files>
+
+    <message-datetime></message-datetime>
+</div>
+
+<ng-template #indicatorMock>
+    <div [ngStyle]="{width: '24px', height: '24px'}"></div>
+</ng-template>

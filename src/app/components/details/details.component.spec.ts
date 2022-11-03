@@ -14,6 +14,13 @@ describe('DetailsComponent', () => {
 
     fixture = TestBed.createComponent(DetailsComponent);
     component = fixture.componentInstance;
+    component.initialRect = {
+      x: '40px',
+      y: '40px',
+      width: 'calc(100vw - 80px)',
+      height: 'calc(100vw / 2 - 80px / 2)',
+      path: '/',
+    };
     fixture.detectChanges();
   });
 

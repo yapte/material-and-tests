@@ -1,0 +1,25 @@
+<h4> Emit action: </h4>
+
+<mat-nav-list>
+    <button mat-list-item (click)="sendMessage('z')">
+        Send message as Z. Author
+    </button>
+    <button mat-list-item (click)="sendMessage('x')">
+        Send message as X. Author
+    </button>
+    <button mat-list-item (click)="error(ErrorType.BadRequest)">
+        Emit API 400
+    </button>
+    <button mat-list-item (click)="error(ErrorType.Unauthorized)">
+        Emit API 401
+    </button>
+    <button mat-list-item (click)="error(ErrorType.Forbidden)">
+        Emit API 403
+    </button>
+    <button mat-list-item (click)="error(ErrorType.NotFound)">
+        Emit API 404
+    </button>
+    <button mat-list-item (click)="error(ErrorType.Failure)">
+        Emit API unhandled error or server error 500+
+    </button>
+</mat-nav-list>

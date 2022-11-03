@@ -1,0 +1,10 @@
+<h3>context-menu for {{element3d?.name}}</h3>
+
+<mat-nav-list>
+    <a *ngFor="let item of [1,2,3]" mat-list-item (click)="hide()">
+        <span mat-line> Item #{{item}}</span>
+        <span mat-line>Add to a note</span>
+    </a>
+</mat-nav-list>
+
+<pre (click)="hide()"> {{element3d?.params |json}} </pre>

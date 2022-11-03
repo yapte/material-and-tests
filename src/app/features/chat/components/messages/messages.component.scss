@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    height: 50vh;
+    gap: 24px;
+    overflow-y: auto;
+    border: 1px solid #efefef;
+    background-color: #f3f3f3;
+    border-radius: 3px;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: #efefef;
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #898989;
+        border-radius: 3px;
+    }
+}

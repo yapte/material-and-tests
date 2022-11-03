@@ -1,0 +1,29 @@
+<div class="wrap row">
+    <parties></parties>
+    <div *ngIf="isShown$ |async" class="party col">
+        <div class="messages-box">
+            <messages *ngIf="isShown$ |async"></messages>
+        </div>
+        <editor></editor>
+    </div>
+</div>
+
+<div *ngIf="inProgress$ |async" class="in-progress"> IN PROGRESS ... </div>
+
+<div *ngIf="error$ |async as error" [style.color]="'red'">
+    <pre> {{error |json}} </pre>
+</div>
+
+<ng-template #error500>
+    <div class="error-500">
+        <h4> Error 500+ </h4>
+        <div class="col">
+            <p> Unhandled error </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus a, eveniet laboriosam nulla possimus
+                tempore, omnis quidem incidunt optio unde iusto aspernatur doloremque enim deleniti nobis veniam eum
+                fugit earum!
+            </p>
+        </div>
+    </div>
+</ng-template>

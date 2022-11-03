@@ -1,0 +1,5 @@
+<div *ngFor="let c of companies$ |async" class="item col" [class.active]="c.id === activatedCompanyId"
+    (click)="activate(c.id)">
+    <p class="name" [matBadge]="c.unreadQty" [matBadgeHidden]="!c.unreadQty"> {{c.name}} </p>
+    <p class="description"> Lorem ipsum dolor sit amet consectetur. </p>
+</div>

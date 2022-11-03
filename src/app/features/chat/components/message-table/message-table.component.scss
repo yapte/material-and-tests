@@ -1,0 +1,29 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    table {
+        border-collapse: collapse;
+
+        thead,
+        tfoot {
+            // text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        td {
+            border-top: solid 1px #dedede;
+            // border-bottom: solid 1px #dedede;
+            // border-radius: 3px;
+            padding: 12px 0;
+
+            &:last-child {
+                text-align: right;
+            }
+
+            &:not(:last-child):not(:first-child) {
+                padding: 12px;
+            }
+        }
+    }
+}

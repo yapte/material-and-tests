@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Dialog } from '@angular/cdk/dialog';
+import { Component, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { opacityEnterAnimation } from 'src/animations/opacity-enter.animation';
+import { CreateOrderDialogComponent } from '../create-order-dialog/create-order-dialog.component';
 
 
 export interface Tile {
@@ -16,7 +18,7 @@ export interface Tile {
   styleUrls: ['./home-page.component.scss'],
   animations: [opacityEnterAnimation],
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements AfterViewInit {
   initialRect: ImageData;
   tiles: Tile[] = [
     { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
@@ -27,38 +29,52 @@ export class HomePageComponent implements OnInit {
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
+    private _element: ElementRef,
+    private _renderer: Renderer2,
+    private _dialog: Dialog,
   ) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this._activatedRoute.queryParams
       .subscribe(params => {
-        
+        const productId = +params['productId'];
+        if (productId) {
+          this.openDetailsById(productId);
+        } else {
+          this.hideDetails();
+        }
       });
   }
 
-  openDetails(e: Event) {
-    const cardElem: HTMLDivElement = e.currentTarget as HTMLDivElement;
+  openDetailsById(id: number) {
+    this._renderer.setStyle(document.body, 'overflow', 'hidden');
+    const cardElem: HTMLDivElement = (this._element.nativeElement as HTMLElement).querySelector(`[id="${id}"]`);
     const imgElem = cardElem.querySelector('.card-img') as HTMLDivElement;
     const rect = imgElem.getClientRects()[0];
-    this.initialRect = {
-      x: `${rect.x}px`,
-      y: `${rect.y}px`,
-      width: `${rect.width}px`,
-      height: `${rect.height}px`,
-      path: imgElem.style.backgroundImage,
-    };
-
-    this._router.navigate(['.'], { relativeTo: this._activatedRoute, queryParams: { productId: 12 } });
+    setTimeout(() => {
+      this.initialRect = {
+        x: `${rect.x}px`,
+        y: `${rect.y}px`,
+        width: `${rect.width}px`,
+        height: `${rect.height}px`,
+        path: imgElem.style.backgroundImage,
+      };
+    });
   }
 
   hideDetails() {
-    this.initialRect = null;
+    if (this.initialRect)
+      this.initialRect = null;
+
+    this._renderer.setStyle(document.body, 'overflow', 'unset');
     this._router.navigate(['.'], { relativeTo: this._activatedRoute, queryParams: {} });
   }
 
   onAction(e: Event) {
-    e.stopPropagation();
-    alert((e.target as HTMLButtonElement).innerText);
+    e.stopPropagation(); 
+
+    const dialogRef = this._dialog.open(CreateOrderDialogComponent);
+    dialogRef.closed.subscribe(x => console.log(x));
   }
 }
 

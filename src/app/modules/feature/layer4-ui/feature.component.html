@@ -1,0 +1,16 @@
+<div class="col">
+    <h4> FEATURE </h4>
+
+    <button matButton (click)="update()"> Update list </button>
+
+    <div *ngIf="page$ |async as page" class="col">
+
+
+        <div *ngFor="let item of page.items" class="item">
+            {{item.title}}
+        </div>
+    </div>
+
+    <div *ngIf="inProgress$ |async" class="in-progress"> IN PROGRESS </div>
+    <div *ngIf="error$ |async as error" class="error"> {{error}} </div>
+</div>

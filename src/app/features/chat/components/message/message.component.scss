@@ -1,0 +1,67 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    margin-right: 20%;
+
+    &.is-mine {
+        align-items: flex-end;
+        margin-right: unset;
+        margin-left: 20%;
+
+        .bubble {
+            border-radius: 24px 0 24px 24px;
+        }
+    }
+
+    &.is-common {
+        margin: 0 20%;
+
+        .bubble {
+            width: 100%;
+            border-radius: 24px;
+            align-items: center;
+        }
+    }
+
+    &.is-unread {
+        .bubble {
+            border-color: orange;
+        }
+    }
+
+    .bubble {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 80%;
+        min-height: 81px;
+        border: solid 1px transparent;
+        padding: 24px 24px 12px;
+        border-radius: 0 24px 24px 24px;
+        background-color: white;
+        box-shadow: 0 0 24px 0 rgba(0, 0, 0, .06);
+        box-sizing: border-box;
+        line-height: 1.5;
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        message-datetime {
+            align-self: flex-end;
+        }
+    }
+
+    .cert {
+        width: 100px;
+        height: 125px;
+        font-size: 100px;
+        color: rgb(171, 246, 115);
+        text-shadow: 0 4px 8px rgba(0, 0, 0, .12);
+    }
+}

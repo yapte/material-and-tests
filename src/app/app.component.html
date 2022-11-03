@@ -1,8 +1,16 @@
 <mat-toolbar>
   <!-- <mat-icon></mat-icon> -->
 
-  <div class="container">
+  <div class="container row">
     <span>My Application</span>
+
+    <button [routerLink]="['/links']" matButton> Links page </button>
+    <button [routerLink]="['/feature']" matButton> Feature page </button>
+    <button [routerLink]="['/three']" matButton> Three page </button>
+    <button [routerLink]="['/products']" matButton> Products page </button>
+    <button [routerLink]="['/article-editor']" matButton> Редактор статьи </button>
+    <button [routerLink]="['/chat']" matButton> Chat </button>
+    <button [routerLink]="['/sticky']" matButton> Sticky </button>
   </div>
 
 </mat-toolbar>

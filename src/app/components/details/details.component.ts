@@ -1,11 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ImageData } from 'src/app/pages/home-page/home-page.component';
-import { BehaviorSubject } from 'rxjs';
 import { titleAnimation } from 'src/animations/title.animation';
-import { opacityEnterAnimation } from 'src/animations/opacity-enter.animation';
-import { modalLeaveAnimation } from 'src/animations/modal-leave.animation';
 
-const TIMEOUT1 = 100;
+const TIMEOUT1 = 200;
 const TIMEOUT2 = 500;
 
 @Component({

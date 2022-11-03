@@ -1,0 +1,6 @@
+<ng-container *ngIf="messagesView$ |async as view">
+    <message *ngFor="let message of view.messages" [message]="message" [attr.data-id]="message.id">
+    </message>
+
+    <div *ngIf="!view.messages.length" class="no-messages"> Нет сообщений </div>
+</ng-container>

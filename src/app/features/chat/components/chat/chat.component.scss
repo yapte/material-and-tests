@@ -1,0 +1,40 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .wrap {
+        gap: 0;
+    }
+
+    parties {
+        width: 180px;
+    }
+
+    .party {
+        flex: 1 1 0;
+        gap: 24px;
+    }
+
+    .messages-box {
+        flex: 1 1 0;
+    }
+
+    editor {
+        margin-left: 24px;
+    }
+}
+
+.in-progress {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: orange, $alpha: .5);
+    font-size: 36px;
+}
+
+.error-500 {
+    width: min(600px, calc(100vw - 48px));
+}

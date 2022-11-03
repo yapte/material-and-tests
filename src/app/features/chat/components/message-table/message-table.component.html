@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <td> Наименование </td>
+            <td> Кол-во </td>
+            <td> Цена </td>
+            <td> Стоимость </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of [1,2,3,4]">
+            <td> Name #{{i}} </td>
+            <td> {{i * 3}} </td>
+            <td> {{ 10000 - i * 10 * 23 |currency}} </td>
+            <td> {{ (10000 - i * 10 * 23) * i * 3 |currency}} </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4"> {{129885400 |currency}} </td>
+        </tr>
+    </tfoot>
+</table>

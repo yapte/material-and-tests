@@ -1,0 +1,23 @@
+:host {
+    // width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 40px 12%;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: white;
+    width: 600px;
+
+    .form {
+        gap: 24px;
+    }
+
+    mat-dialog-actions {
+        margin-top: 24px;
+    }
+
+    button {
+        align-self: flex-start;
+    }
+}

@@ -1,5 +1,6 @@
 <div class="cards">
-    <div *ngFor="let i of [1,2,3,4,5,6,7]" data-id="{{i}}" class="card" (click)="openDetails($event)">
+    <div *ngFor="let i of [1,2,3,4,5,6,7]" data-id="{{i}}" class="card" [routerLink]="['.']"
+        [queryParams]="{productId: i}">
         <div class="card-img" [style.backgroundImage]="'url(/assets/images/nature-0' + i + '.jpg)'"></div>
         <div class="card-title"> Title #{{i*i}} </div>
         <div class="card-description">
@@ -8,8 +9,8 @@
                 Perspiciatis nemo quibusdam voluptate asperiores laborum sequi molestiae.
             </p>
         </div>
-        <button mat-stroked-button type="button" (click)="onAction($event)">
-            {{i%2 == 0 ? 'Action' : 'Multiaction'}}#{{i}}
+        <button mat-stroked-button color="primary" type="button" (click)="onAction($event)">
+            Заказать
         </button>
     </div>
 </div>
